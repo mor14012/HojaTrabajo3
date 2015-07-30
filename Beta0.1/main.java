@@ -1,7 +1,11 @@
 public class main{
 	public static void main(String[] args) {
-		file File = new file();
-		String input=File.generate("datos.txt",3000);
-		System.out.println(input);
+		//Creación de array de 3000 números aleatorios
+		int [] array = new int[3000];
+		array = new file().generate("datos.txt",3000);
+		//Instancia de clase sort que contienen los 5 tipos de ordenamiento
+		sort Sort = new sort();
+		System.out.println(Sort.toString());
+
 	}
 }
