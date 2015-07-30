@@ -14,6 +14,29 @@ public class sort{
 		}
 		return array;
 	}
+	
+	public int[] InsertionSort (int[] array){
+		int numOrdenados=1;
+		int indice=0;
+
+			while (numOrdenados<(array.length)){
+				int temp=array[numOrdenados];
+		
+				for (indice=numOrdenados; indice>0; indice--){
+			
+						if(temp<array[indice-1]){
+								array[indice]=array[indice-1];
+						}else{
+								break;
+						}
+			
+					}
+			array[indice]=temp;
+			numOrdenados=numOrdenados+1;
+
+			}
+		return array;
+		}
 
 	public String toString(){
 		return "Este programa posee cinco algoritmos de ordenamiento distintos."+
