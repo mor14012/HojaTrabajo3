@@ -5,12 +5,12 @@ import java.io.File;
 
 public class file{
 	public int[] generate(String name, int num){
-		int [] array = new int [3000];
-		//Generación de cadena String con 3000 números enteros aleatorios de 0 a 9
+		int [] array = new int [num];
+		//Generación de cadena String con números enteros aleatorios de 0 a 9
 		String cadena ="";
 		Random random = new Random();
 		while(true){
-			cadena+=random.nextInt(9);
+			cadena+=random.nextInt(10);
 			if(cadena.length()==num)
 				break;
 		}
@@ -31,10 +31,10 @@ public class file{
 		catch(Exception e){
 			System.out.println("Error: No se ha podido leer el archivo.");
 		}
-		for(int i=0; i<10; i++){
-			array[i] = Character.getNumericValue(cadena.charAt(i));
+		for(int i=0; i<array.length; i++){
+			array[i] = Integer.parseInt(cadena.substring(i,i+1));
 		}
-		//Retorna el array de 3000 números aleatorios
+		//Retorna el array de números aleatorios
 		return array;
 	}
 }
