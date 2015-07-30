@@ -37,6 +37,16 @@ public class main{
 		}
 		System.out.println(resultado);
 
+                //Insertion Sort*/
+		
+		array = Sort.InsertionSort(array);
+		resultado="";
+		System.out.println("----- InsertionSort -----");
+		for(int i=0; i<array.length; i++){
+			resultado+=array[i];
+		}
+		System.out.println(resultado);
+
 		/*Utilicen este template para imprimir sus resultados
 		Cambien Template por el nombre de su Sort
 
