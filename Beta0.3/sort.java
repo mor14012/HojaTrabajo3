@@ -14,23 +14,23 @@ public class sort{
 		return array;
 	}
 
-	public int[] InsertionSort (int[] array){
+	public num[] InsertionSort (num[] array){
 		int numOrdenados=1;
 		int indice=0;
 
 			while (numOrdenados<(array.length)){
-				int temp=array[numOrdenados];
+				int temp=array[numOrdenados].getvalue();
 
 				for (indice=numOrdenados; indice>0; indice--){
 
-						if(temp<array[indice-1]){
+						if(temp<array[indice-1].getvalue()){
 								array[indice]=array[indice-1];
 						}else{
 								break;
 						}
 
 					}
-			array[indice]=temp;
+			array[indice].setvalue(temp);
 			numOrdenados=numOrdenados+1;
 
 			}
