@@ -1,5 +1,39 @@
 public class sort{
-
+	private static void merge(num[] data, num[] temp, int low, int middle, int high){
+		int ri = low;
+		int ti = low;
+		int di = middle;
+		while(ti<middle && di<=high){
+			if(data[di].compareTo(temp[ti])==0){
+				data[ri++] = data[di++];
+			} else {
+				data[ri++]=temp[ti++];
+			}
+		}
+		while(ti<middle){
+			data[ri++]=temp[ti++];
+		}
+	}
+	
+	private static void mergeSortRecursive(num[] data, num[] temp, int low, int high){
+		int n = high-low+1;
+		int middle = low + n/2;
+		int i;
+		if(n<2){ 
+			return;
+		}
+		for(i = low; i<middle; i++){
+			temp[i] = data[i];
+		}
+		mergeSortRecursive(temp, data, low, middle-1);
+		mergeSortRecursive(data, temp, low, middle-1);
+		merge(data, temp, low, middle, high);
+	} 
+	
+	public static void mergeSort(num[] data, int n){
+		mergeSortRecursive(data, new num[n], 0, n-1);
+	}
+	
 	public num[] SelectionSort(num[] array){
 		int a=0;
 		for(int i=0; i<(array.length); i++){
