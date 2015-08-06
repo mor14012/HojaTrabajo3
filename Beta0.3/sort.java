@@ -70,7 +70,44 @@ public class sort{
 			}
 		return array;
 		}
-
+	
+	public num[] RadixSort(num[] array) {
+	    
+	    for (num shift = Integer.SIZE - 1; shift > -1; shift--) {
+	    
+	        num[] tmp = new num[array.length];
+	      
+	        num j = 0;
+	 
+	     
+	        for (num i = 0; i < array.length; i++) {
+	       
+	            boolean move = array[i] << shift >= 0;
+	 
+	        
+	            if (shift == 0 ? !move : move) {
+	                tmp[j] = array[i];
+	                j++;
+	            } else {
+	           
+	                array[i - j] = array[i];
+	            }
+	        }
+	 
+	     
+	        for (num i = j; i < tmp.length; i++) {
+	            tmp[i] = array[i - j];
+	        }
+	 
+	 
+	        array = tmp;
+	    }
+	 
+	    return array;
+	}
+	
+	
+	
 	public String toString(){
 		return "Este programa posee cinco algoritmos de ordenamiento distintos."+
 			"Recibe como parámetro un array de int y regresa un array de int ordenado"+
