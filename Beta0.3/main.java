@@ -70,6 +70,8 @@ public class main{
 			resultado+=array[i].getvalue();
 		}
 		System.out.println(resultado);
+		
+		
 
 		
 		
