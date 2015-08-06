@@ -31,6 +31,15 @@ public class main{
 			resultado+=array[i].getvalue();
 		}
 		System.out.println(resultado);
+		
+				//Merge Sort
+		sort.mergeSort(array, array.length);
+		resultado="";
+		System.out.println("----- MergeSort -----");
+		for(int i=0; i<array.length; i++){
+			resultado+=array[i].getvalue();
+		}
+		System.out.println(resultado);
 
 		//Instancia de clase sort que contienen los 5 tipos de ordenamiento
 		sort Sort = new sort();
