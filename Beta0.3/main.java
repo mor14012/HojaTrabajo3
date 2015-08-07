@@ -63,7 +63,7 @@ public class main{
 		System.out.println(resultado);
 		
 		 //Radix Sort
-		array = Sort.RadixSort(array);
+		array = Sort.sort(array);
 		resultado="";
 		System.out.println("----- RadixSort -----");
 		for(int i=0; i<array.length; i++){

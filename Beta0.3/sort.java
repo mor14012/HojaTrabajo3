@@ -71,39 +71,39 @@ public class sort{
 		return array;
 		}
 	
-	public num[] RadixSort(num[] array) {
-	    
-	    for (num shift = Integer.SIZE - 1; shift > -1; shift--) {
-	    
-	        num[] tmp = new num[array.length];
-	      
-	        num j = 0;
+	public static int[] sort(int[] old) {
+	  
+	    for (int shift = Integer.SIZE - 1; shift > -1; shift--) {
+	   
+	        int[] tmp = new int[old.length];
 	 
-	     
-	        for (num i = 0; i < array.length; i++) {
+	        int j = 0;
+	 
+	    
+	        for (int i = 0; i < old.length; i++) {
+	          
+	            boolean move = old[i] << shift >= 0;
+	 
 	       
-	            boolean move = array[i] << shift >= 0;
-	 
-	        
 	            if (shift == 0 ? !move : move) {
-	                tmp[j] = array[i];
+	                tmp[j] = old[i];
 	                j++;
 	            } else {
-	           
-	                array[i - j] = array[i];
+	       
+	                old[i - j] = old[i];
 	            }
 	        }
 	 
-	     
-	        for (num i = j; i < tmp.length; i++) {
-	            tmp[i] = array[i - j];
+
+	        for (int i = j; i < tmp.length; i++) {
+	            tmp[i] = old[i - j];
 	        }
 	 
-	 
-	        array = tmp;
+	  
+	        old = tmp;
 	    }
 	 
-	    return array;
+	    return old;
 	}
 	
 	
