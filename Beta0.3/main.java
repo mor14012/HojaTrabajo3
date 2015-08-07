@@ -4,7 +4,7 @@ public class main{
 	public static void main(String[] args) {
 		int numero=0;
 
-		System.out.println("Bienvenido\nIngrese el número de digitos que desea generar y ordenar: ");
+		System.out.println("Bienvenido\nIngrese el nÃºmero de digitos que desea generar y ordenar: ");
 		while(true){
 			try{
 				Scanner input = new Scanner(System.in);
@@ -12,14 +12,14 @@ public class main{
 				break;
 			}
 			catch(Exception e){
-				System.out.println("Error: Por favor, ingrese un número válido.");
+				System.out.println("Error: Por favor, ingrese un nÃºmero vÃ¡lido.");
 			}
 		}
 		String resultado="";
-		//Creación de array de un número específico de números aleatorios
+		//CreaciÃ³n de array de un nÃºmero especÃ­fico de nÃºmeros aleatorios
 		int [] arrayrandom = new int[numero];
 		num [] array = new num[numero];
-		//Se llama al método generate de la clase File para generar el txt con números
+		//Se llama al mÃ©todo generate de la clase File para generar el txt con nÃºmeros
 		arrayrandom = new file().generate("datos.txt",numero);
 		//Se asignan los valores aleatorios a el array de la clase que implementa Comparable
 		for(int i=0; i<array.length; i++){
@@ -27,15 +27,6 @@ public class main{
 			array[i].setvalue(arrayrandom[i]);
 		}
 		System.out.println("------ Input Array -----");
-		for(int i=0; i<array.length; i++){
-			resultado+=array[i].getvalue();
-		}
-		System.out.println(resultado);
-		
-				//Merge Sort
-		sort.mergeSort(array, array.length);
-		resultado="";
-		System.out.println("----- MergeSort -----");
 		for(int i=0; i<array.length; i++){
 			resultado+=array[i].getvalue();
 		}
@@ -61,6 +52,15 @@ public class main{
 			resultado+=array[i].getvalue();
 		}
 		System.out.println(resultado);
+
+		//Merge Sort
+		sort.mergeSort(array, array.length);
+		resultado="";
+		System.out.println("----- MergeSort -----");
+		for(int i=0; i<array.length; i++){
+			resultado+=array[i].getvalue();
+		}
+		System.out.println(resultado);
 		
 		 //Radix Sort
 		array = Sort.sort(array);
@@ -71,10 +71,7 @@ public class main{
 		}
 		System.out.println(resultado);
 		
-		
 
-		
-		
 		
 		/*Utilicen este template para imprimir sus resultados
 		Cambien Template por el nombre de su Sort
