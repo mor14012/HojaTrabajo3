@@ -72,12 +72,13 @@ public class sort{
 		}
 	
 	public static num[] sort(num[] old) {
-	  
+		  
 	    for (int shift = Integer.SIZE - 1; shift > -1; shift--) {
-	        int[] tmp = new int[old.length];
+	        num[] tmp = new num[old.length];
 	        int j = 0;
 	        for (int i = 0; i < old.length; i++) {
-	            boolean move = old[i] << shift >= 0;
+	            //boolean move = old[i] << shift >= 0;
+				boolean move =false;
 	            if (shift == 0 ? !move : move) {
 	                tmp[j] = old[i];
 	                j++;
