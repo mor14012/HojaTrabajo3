@@ -1,4 +1,5 @@
 public class sort{
+	
 	private static void merge(num[] data, num[] temp, int low, int middle, int high){
 		int ri = low;
 		int ti = low;
@@ -97,11 +98,9 @@ public class sort{
 	    return old;
 	}
 	
-	
-	
 	public String toString(){
 		return "Este programa posee cinco algoritmos de ordenamiento distintos."+
-			"Recibe como parámetro un array de int y regresa un array de int ordenado"+
+			"Recibe como parÃ¡metro un array de int y regresa un array de int ordenado"+
 			"de menor a mayor.";
 	}
 }
