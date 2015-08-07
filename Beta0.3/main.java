@@ -4,7 +4,7 @@ public class main{
 	public static void main(String[] args) {
 		int numero=0;
 
-		System.out.println("Bienvenido\nIngrese el nÃºmero de digitos que desea generar y ordenar: ");
+		System.out.println("Bienvenido\nIngrese el numero de digitos que desea generar y ordenar: ");
 		while(true){
 			try{
 				Scanner input = new Scanner(System.in);
